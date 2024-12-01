@@ -1,0 +1,416 @@
+* {
+    margin: 0; /* Menghapus margin dari semua elemen */
+    padding: 0; /* Menghapus padding dari semua elemen */
+    box-sizing: border-box; /* Memastikan padding dan border dihitung dalam ukuran elemen */
+    text-decoration: none;
+    scroll-behavior: smooth; /* Menambahkan efek scroll halus */
+}
+
+body {
+    font-family:'Poppins', sans-serif;
+}
+
+/* Gaya untuk header */
+.header {
+    width: 100%; /* Lebar header 100% dari lebar viewport */
+    position: fixed; /* Posisi tetap di atas halaman */
+    top: 0; /* Menempatkan di atas halaman */
+    left: 0; /* Menempatkan di sebelah kiri halaman */
+    z-index: 1000; /* Menjamin header tetap di atas elemen lainnya */
+    background-color: transparent; /* Latar belakang transparan */
+    transition: background-color 0.3s ease; /* Efek transisi pada perubahan warna latar belakang */
+}
+/* Navbar */
+.navbar {
+    display: flex; /* Menggunakan flexbox untuk susunan elemen navbar */
+    justify-content: space-between; /* Memberikan jarak antara elemen navbar */
+    align-items: center; /* Memusatkan elemen secara vertikal */
+    padding: 15px 20px; /* Memberikan padding pada navbar */
+    color: black; /* Menetapkan warna teks putih */
+    position: relative; /* Menetapkan posisi relatif */
+    top: 0; /* Menempatkan navbar di atas halaman */
+    width: 100%; /* Lebar navbar 100% dari lebar viewport */
+    transition: all 0.3s ease; /* Efek transisi untuk semua properti */
+}
+
+/* Animasi sticky navbar */
+.sticky {
+    background-color: rgb(149 149 149 / 14%); /* Mengubah warna latar belakang saat navbar menjadi sticky */
+    transform: translateY(0); /* Mengatur posisi navbar saat sticky */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan di bawah navbar */
+}
+
+/* Gaya logo navbar */
+.navbar-logo img {
+    width: 35px; /* Lebar gambar logo */
+    height: auto; /* Menjaga rasio aspek gambar */
+    max-height: 50px; /* Menetapkan tinggi maksimum logo */
+}
+
+/* Daftar tautan navigasi */
+.nav-links {
+    list-style: none; /* Menghapus penanda daftar */
+    display: flex; /* Menggunakan flexbox untuk susunan horizontal */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Memberikan jarak antara item navigasi */
+}
+
+.nav-links a {
+    color: black; /* Menetapkan warna teks tautan menjadi putih */
+    text-decoration: none; /* Menghapus garis bawah dari tautan */
+    font-size: 18px; /* Menetapkan ukuran font */
+    position: relative; /* Menetapkan posisi relatif untuk efek garis bawah */
+}
+
+
+
+/* Hamburger menu untuk perangkat kecil */
+.hamburger {
+    display: none; /* Menyembunyikan hamburger secara default */
+    flex-direction: column; /* Menyusun ikon hamburger secara vertikal */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+}
+
+.hamburger span {
+    width: 25px; /* Lebar garis hamburger */
+    height: 3px; /* Tinggi garis hamburger */
+    background-color: black; /* Warna garis hamburger */
+    margin: 4px 0; /* Jarak antar garis */
+    transition: 0.3s; /* Efek transisi pada hamburger */
+}
+
+/* Efek sticky */
+.sticky {
+    background-color: rgb(149 149 149 / 13%); /* Warna latar belakang sticky navbar */
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang saat sticky */
+    transform: translateY(0); /* Reset transformasi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan navbar saat sticky */
+}
+.sidebar {
+    position: fixed; /* Menempatkan sidebar secara tetap */
+    top: 0; /* Menempatkan sidebar di bagian atas */
+    left: -250px; /* Menyembunyikan sidebar di sisi kiri */
+    width: 250px; /* Lebar sidebar */
+    height: 100%; /* Tinggi sidebar 100% */
+    background-color: rgb(0 0 0 / 30%); /* Latar belakang sidebar */
+    color:black; /* Warna teks sidebar */
+    display: flex; /* Menyusun elemen sidebar menggunakan flexbox */
+    flex-direction: column; /* Menyusun elemen secara vertikal */
+    padding-top: 20px; /* Memberikan padding atas */
+    transition: left 0.3s; /* Efek transisi pada pergeseran sidebar */
+    z-index: 999; /* Menetapkan lapisan sidebar di atas elemen lain */
+}    
+/* Gaya untuk sidebar ketika ditampilkan */
+.sidebar.show {
+left: 0; /* Menetapkan posisi sidebar ke kiri (menampilkan sidebar dari kiri) */
+}
+
+/* Gaya untuk daftar link di sidebar */
+.sidebar-links {
+list-style: none; /* Menghapus bullet points dari list item */
+padding: 50px 30px; /* Memberikan padding atas dan bawah, serta padding kiri dan kanan */
+}
+
+/* Gaya untuk setiap item di dalam sidebar */
+.sidebar-links li {
+margin: 47px 0px; /* Memberikan jarak vertikal antar item sidebar */
+}
+
+/* Gaya untuk link di dalam sidebar */
+.sidebar-links a {
+color: white; /* Mengatur warna teks link menjadi putih */
+text-decoration: none; /* Menghapus garis bawah pada link */
+font-size: 18px; /* Menetapkan ukuran font link */
+}
+
+
+/* Media query yang berlaku untuk layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+
+/* Menyembunyikan navigasi (nav-links) pada layar kecil */
+.nav-links {
+    display: none; /* Menghilangkan tampilan daftar navigasi */
+}
+
+/* Menampilkan ikon hamburger untuk menu di layar kecil */
+.hamburger {
+    display: flex; /* Menampilkan tombol hamburger dalam bentuk flex */
+}
+
+/* Mengubah ukuran logo navbar agar lebih kecil di layar kecil */
+.navbar-logo img {
+    width: 20px; /* Mengatur lebar logo menjadi 20px */
+}
+
+/* Menyembunyikan elemen dengan kelas 'images' pada layar kecil */
+.images {
+    display: none; /* Menghilangkan gambar pada tampilan kecil */
+}
+.hero-section{
+padding: 20px; /* Menambahkan padding pada layar kecil */
+text-align: center; /* Ubah teks menjadi rata tengah pada layar kecil */
+}
+}
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Ruang diatur agar konten terpusat */
+    min-height: 100vh;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .hero-text {
+    margin-top: -20px; /* Teks sedikit lebih ke atas */
+  }
+  
+  .hero-text h1 {
+    font-size: 1.7rem; /* Sedikit lebih besar */
+    color: #666;
+  }
+  
+  .hero-text h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .hero-text span {
+    color: #007BFF;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-image img {
+    max-width: 70%; /* Gambar lebih besar */
+    border-radius: 10%; /* Awalnya memiliki radius 10% */
+    width: 300px; /* Ukuran default */
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: border-radius 0.3s ease, transform 0.3s ease; /* Animasi */
+  }
+  
+  .hero-image img:hover {
+    border-radius: 50%; /* Bentuk menjadi bulat */
+    transform: scale(1.1); /* Membuat gambar sedikit lebih besar */
+  }
+
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px; /* Sedikit lebih besar */
+    font-size: 1rem; /* Ukuran teks lebih besar */
+    color: #fff;
+    background: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .hero {
+      flex-direction: row; /* Membagi teks dan gambar dalam dua kolom */
+      text-align: left;
+    }
+  
+    .hero-text {
+      flex: 1;
+      margin-top: 0; /* Reset margin */
+    }
+  
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .hero-image img {
+      width: 400px; /* Gambar lebih besar di layar besar */
+    }
+  }
+/* About Section */
+.about {
+  padding: 50px 20px;
+  background: #f9f9f9; /* Warna latar belakang */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Ruang antar kolom */
+  flex-wrap: wrap; /* Supaya responsif */
+  max-width: 1200px;
+  margin: 0 auto; /* Tengah di layar */
+}
+
+.column {
+  flex: 1;
+  margin: 20px;
+  min-width: 300px; /* Ukuran minimum kolom */
+  text-align: left; /* Kolom rata kiri */
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.line {
+  height: 2px;
+  background: #ff4a57;
+  margin: 10px 0; /* Jarak antar elemen */
+}
+
+.column p, .column ul {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.column ul li.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 10px 0;
+}
+
+.column ul li strong {
+  color: #333;
+}
+
+/* Tombol */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #f9f9f9;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff4a57;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+/* footer */
+.container-footer{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

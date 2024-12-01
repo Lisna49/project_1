@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Front-End</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/img/icon_Aksa1.png" type="image/png">
+</head>
+<body>
+    <!-- Header and Navbar -->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <a href="#" class="navbar-logo">
+                <img src="assets/img/icon_Aksa.png" id="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#Footer">Footer</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar for small devices -->
+    <div class="sidebar" id="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="#Home">Home</a></li>>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#Footer">Footer</a></li>
+        </ul>
+    </div>
+
+  
+  <main>
+    <section class="hero" id="Home">
+      <div class="hero-text">
+        <h1>Hello,</h1>
+        <h2>I'm <span> Krisna </span></h2>
+        <p>Pengembang Front-End yang berbasis di Somewhere.</p>
+        <div class="buttons">
+          <a href="#about" class="btn">More About Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/Krisna.jpg" alt="Profile Image">
+      </div>
+    </section>
+  </main>
+  
+  <section id="about" class="about">
+    <div class="container">
+      <div class="column">
+        <h2>Who am I?</h2>
+        <div class="line"></div>
+        <p>A Web Designer / Developer Located In Our Lovely Earth</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui deserunt consequatur fugit repellendus illo voluptas?</p>
+        <a href="#" class="btn">Download My CV</a>
+      </div>
+      <div class="column personal-info">
+        <h2>Personal Info</h2>
+        <div class="line"></div>
+        <ul>
+          <li><strong>Birthdate:</strong> 11/11/2005</li>
+          <li class="divider"></li>
+          <li><strong>Email:</strong> aguskrisna1111adi@gmail.com</li>
+          <li class="divider"></li>
+          <li><strong>Phone:</strong> 085-7922-43288</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2>My Expertise</h2>
+        <div class="line"></div>
+        <ul>
+          <li><strong>UX Design</strong><br>Lorem, ipsum dolor.</li>
+          <li class="divider"></li>
+          <li><strong>Web Development</strong><br>Lorem ipsum dolor sit consectetur.</li>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="Footer">
+    <div class="container-footer">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">watch</a></li>
+                    <li><a href="#">bag</a></li>
+                    <li><a href="#">shoes</a></li>
+                    <li><a href="#">dress</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
